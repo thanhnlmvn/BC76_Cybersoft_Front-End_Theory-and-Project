@@ -1,0 +1,145 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <!-- Thuộc tính action sẽ nhận đường dẫn nhận dữ liệu để xử lý -->
+    <!-- Thuộc tính method nhận 2 phương thước GET và POST -->
+    <!-- Phương thức GET sẽ truyền dữ liệu lên url lấy dữ liệu để sử lý ở cấc trang khác -->
+    <!-- Phương thức POST sẽ lấy dữ liệu ngầm để xử lý không đẩy lên url nhầm bảo mật thông tin (ví dụ tk ngân hàng) -->
+    <form action="" method="get">
+      <!-- Thẻ label hiển thị title của thẻ input có thuộc tính for nhận id của thẻ input để khi nhấn vào label sẽ được chuyển tới input của id được truyền vào for -->
+      <label for="name">Name</label>
+
+      <!-- Thẻ input sẽ tạo ra khung để người dùng có thể nhập dữ liệu vào -->
+      <!-- Thuộc tính type text cho phép nhập dữ liệu chữ và số -->
+      <!-- Thuộc tính placeholder cho phép nhập nội dung ẩn hướng dẫn sử dụng cho input đó -->
+      <!-- Thuộc tính maxlength giới hạn số ký tự nhập vào -->
+      <input type="text" id="name" placeholder="Enter name" maxlength="6" />
+
+      <!-- Thuộc tính readonly chỉ cho phép người dùng nhìn không thể thao tác chỉnh sửa input -->
+      <input type="text" value="KH001" readonly />
+
+      <!-- Thuộc tính disabled sẽ làm mờ input và chỉ cho phép người dùng nhìn và không thể thao tác sửa input tuy nhiên nó còn có chứ năng khi trong form người dùng tab readonly vẫn sẽ tab vô được như disabled sẽ không tab vô được -->
+      <!-- Thuộc tính này còn có thể áp dụng nhiều thẻ khác ngoài input (a, button,...) -->
+      <input type="text" value="KH002" disabled />
+
+      <br />
+      <br />
+
+      <!-- Thuộc tính type number cho phép nhập dữ liệu số -->
+      <!-- Thuộc tính min max giới hạn số click button input tuy nhiên vẫn có thể ghi tay được -->
+      <input type="number" name="number" id="" min="1" max="3" />
+
+      <!-- Thuộc tính type email cho phép nhập dữ liệu email và sẽ có validation mặc định nhận dạng kiểu email -->
+      <input type="email" name="email" id="" placeholder="Enter email" />
+
+      <!-- Thuộc tính type password cho phép nhập dữ liệu bị ẩn đi -->
+      <!-- Thuộc tính size tăng kích thước theo khung input -->
+      <input
+        type="password"
+        name="password"
+        placeholder="Enter password"
+        size="50"
+      />
+
+      <br />
+      <br />
+
+      <!-- Thuộc tính required yêu cầu người dùng không được bỏ trống -->
+      <input type="text" placeholder="Enter address" required />
+
+      <!-- Thuộc tính type tel sẽ cho phép người dùng nhập sđt -->
+      <!-- Thuộc tính pattern định dạng nhận dữ liệu -->
+      <input
+        type="tel"
+        name=""
+        id=""
+        pattern="[0-9]{3}-[0-9]{2}-[0-9]{3}"
+        placeholder="123-12-123"
+      />
+
+      <!-- Thuộc tính type date sẽ cho phép người dùng chọn ngày -->
+      <input type="date" name="" id="" />
+      <!-- Thuộc tính type file sẽ cho phép người dùng chọn file để up -->
+      <input type="file" name="" id="" />
+
+      <br />
+      <br />
+
+      <!-- Thẻ textarea tạo ra khung lớn để người dùng có nhập dữ liệu -->
+      <!-- Thuộc tính rows và cols để chỉnh sửa độ lớn của khung nhập liệu -->
+      <textarea name="" id="" rows="10" cols="30"></textarea>
+
+      <!-- combobox / dropdown -->
+      <select name="" id="">
+        <option value="">Chọn loại xe</option>
+        <option value="">Honda</option>
+        <option value="">Yamaha</option>
+      </select>
+
+      <!-- Chọn nhiều loại -->
+      <select name="" id="" multiple>
+        <option value="">Chọn loại xe</option>
+        <option value="">Honda</option>
+        <option value="">Yamaha</option>
+      </select>
+
+      <!-- Gôm nhóm dropdown -->
+      <select name="" id="">
+        <option value="">Chọn loại xe</option>
+        <optgroup>
+          <option value="">Chọn xe máy</option>
+          <option value="">Honda</option>
+          <option value="">Yamaha</option>
+        </optgroup>
+        <optgroup>
+          <option value="">Chọn xe đạp</option>
+          <option value="">Martin</option>
+          <option value="">Pega</option>
+        </optgroup>
+      </select>
+
+      <!-- checkbox -->
+      <input type="checkbox" name="subject" id="math" value="math" />
+      <label for="math">Math</label>
+      <input type="checkbox" name="subject" id="history" value="history" />
+      <label for="history">History</label>
+      <input type="checkbox" name="subject" id="bio" value="bio" />
+      <label for="bio">Bio</label>
+      <input type="checkbox" name="subject" id="phy" value="phy" />
+      <label for="phy">Phy</label>
+
+      <br />
+
+      <!-- Radio -->
+      <input type="radio" name="gender" id="male" value="male" />
+      <label for="male">Male</label>
+      <input type="radio" name="gender" id="female" value="female" />
+      <label for="female">Female</label>
+      <input type="radio" name="gender" id="other" value="other" />
+      <label for="other">Other</label>
+      <br />
+
+      <!-- Gôm nhóm form -->
+      <fieldset>
+        <legend>Thông tin cá nhân</legend>
+        <input type="text" placeholder="fullname" />
+      </fieldset>
+
+      <br />
+      <br />
+
+      <button type="submit">Submit</button>
+
+      <!-- Thuộc tính type button khi nhấn gửi dữ liệu sẽ không load lại trang -->
+      <input type="button" value="Button" />
+
+      <!-- Thuộc tính type reset sẽ clear nội dung của form -->
+      <input type="reset" value="reset" />
+    </form>
+  </body>
+</html>
