@@ -20,6 +20,9 @@ html {
   /* letter-spacing -> điều chỉnh khoản cách ký tự nội dung */
   letter-spacing: 1px;
   color: #212529;
+
+  /* scroll-behavior giúp chỉnh sửa cách lướt trang */
+  scroll-behavior: smooth;
 }
 
 h2 {
@@ -58,10 +61,21 @@ a {
   transition: all 0.5s;
 }
 
+.button:hover {
+  background-color: white;
+  border-color: #ff0e83;
+  color: black;
+}
+
 /* HEADER CSS */
 header {
   background-color: #4e2a84;
   padding: 16px 0;
+  position: fixed;
+  width: 100%;
+
+  /* Z-index sẽ giúp các position chỉnh sửa lớp layout nằm trên hoặc dưới nội dung */
+  z-index: 99;
 }
 
 .header__content {
@@ -80,7 +94,7 @@ header {
 
 /* hover giúp người dùng khi di chuột vào sẽ thay đổi thuộc tính css  */
 .header__content a:hover,
-.header__content .active {
+.header__content .active a {
   color: #ff0e83;
 }
 
@@ -117,8 +131,689 @@ header {
   padding: 23px 0;
 }
 
-.carousel__content .button:hover {
+/* .carousel__content .button:hover {
+  animation: upDown1 1s linear 0s infinite;
+  animation: upDown2 1s linear 0s infinite;
+} */
+
+.carousel__content:hover button {
+  /* animation: upDown2 1s linear 0s 1 reverse; */
+  /* animation: upDown2 1s linear 0s 2 alternate; */
+  /* animation: upDown2 1s linear 0s 2 alternate-reverse; */
+
+  /* animation: upDown3 1s linear 0s 1 forwards; */
+  /* animation: upDown3 1s linear 1s 1 backwards; */
+  animation: upDown3 1s linear 1s 1 both;
+}
+
+/* INTRO CSS */
+.intro__content {
+  /* Cấu trúc lưới */
+  display: grid;
+
+  /* grid-template-columns tạo cấu trúc lưới */
+  /* grid-template-columns: 25% 25% 25% 25%; */
+
+  /* repeat viết gọn những giá trị lặp lại */
+  /* grid-template-columns: repeat(4, 25%); */
+
+  /* fr: phân số */
+  /* Mỗi column 1/4 */
+  grid-template-columns: repeat(4, 1fr);
+}
+
+.intro__item_text {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 0 32px;
+}
+
+.intro__item_text h3 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  color: white;
+}
+
+.intro__item_text p {
+  font-size: 0.875rem;
+  color: #c1c1c1;
+  line-height: 29px;
+}
+
+.intro__item img {
+  width: 100%;
+  display: block;
+}
+
+.item--col1 {
+  /* grid-column dùng để gộp cột */
+  /* C1: nhận vào vị trí bắt đầu và vị trí kết thúc */
+  /* grid-column: 2/ 4; */
+
+  /* C2: nhận vào vị trí bắt đầu và span số cột cần gộp */
+  grid-column: 2 / span 2;
+}
+
+.item--col2 {
+  /* grid-column: 1 / 3; */
+  grid-column: 1 / span 2;
+}
+
+.item--col3 {
+  /* grid-column: 3/ 5; */
+  grid-column: 3 / span 2;
+}
+
+.bg--purple {
+  background-color: #4e2a84;
+}
+
+.bg--pink {
+  background-color: #ff0e83;
+}
+
+.bg--pink2 {
+  background-color: #ed6498;
+}
+
+.bg--purple2 {
+  background-color: #836eaa;
+}
+
+/* NUMBER CSS */
+.number {
+  padding: 70px 0;
+}
+
+.number__content {
+  text-align: center;
+  display: flex;
+  justify-content: space-around;
+}
+
+.number__item p:first-of-type {
+  font-size: 2rem;
+  color: #4e2a84;
+  font-weight: bold;
+}
+
+.number__item p:last-of-type {
+  font-size: 1.4rem;
+  font-weight: bold;
+  letter-spacing: 4px;
+  padding: 24px 0;
+}
+
+/* SERVICES CSS */
+.services {
+  padding: 70px 0;
+  background-image: url(./../img/s1.jpg);
+  background-size: cover;
+}
+
+.services__title {
+  color: white;
+}
+
+.services__content {
+  text-align: center;
+  display: flex;
+  justify-content: space-around;
+}
+
+.services__item {
+  padding: 0 20px;
+}
+
+.services__item .item__icon {
+  width: 105px;
+  height: 105px;
+  line-height: 105px;
+  margin: 0 auto;
   background-color: white;
+  border-radius: 50%;
+  border: 1px solid #4e2a84;
+  font-size: 3.75rem;
+  color: #4e2a84;
+  transition: all 0.5s;
+}
+
+.services__item h3 {
+  font-size: 1.5rem;
+  font-weight: 500;
+  margin: 17px 0;
+}
+
+.services__item p {
+  font-size: 0.875rem;
+  line-height: 25px;
+  margin-bottom: 12px;
+}
+
+.services__item:hover .item__icon {
+  color: #ff0e83;
+}
+
+/* GALLERY */
+.gallery {
+  padding: 70px 0;
+}
+
+.gallery__content {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 30px;
+  padding: 0 15px;
+}
+
+.gallery__content img {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+.gallery__content .item--1 {
+  /* grid-column: 1 / 3; */
+  grid-column: 1 / span 2;
+}
+
+.gallery__content .item--6 {
+  /* grid-column: 3 / 5; */
+  grid-column: 3 / span 2;
+}
+
+.gallery__content .gallery__item {
+  position: relative;
+  overflow: hidden;
+}
+
+.gallery__content .gallery__overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(48, 132, 163, 0.2);
+  padding: 38px 28px;
+  text-align: right;
+  color: white;
+}
+
+.gallery__overlay h3 {
+  font-size: 1.875rem;
+  transform: translateY(20px);
+  transition: all 0.5s;
+}
+
+.gallery__overlay h3 span {
+  font-weight: 300;
+}
+
+.gallery__overlay:hover h3 {
+  transform: translateY(0);
+}
+
+.gallery__overlay h3::after {
+  content: "";
+  display: block;
+  width: 100%;
+  height: 5px;
+  margin-top: 10px;
+  transform: translateY(20px);
+  opacity: 0;
+  background-color: white;
+  transition: all 0.5s;
+}
+
+.gallery__overlay:hover h3::after {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+.gallery__overlay p {
+  position: absolute;
+  bottom: 38px;
+  right: 28px;
+  font-size: 0.75rem;
+  transform: translateY(70px);
+  /* opacity: 0; */
+  transition: all 0.5s;
+}
+
+.gallery__overlay:hover p {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+/* TEAM CSS */
+.team {
+  background-color: #4e2a84;
+  padding: 70px 0;
+}
+
+.team h2 {
+  color: white;
+}
+
+.team__content {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 25px 30px;
+}
+
+.team__item {
+  position: relative;
+}
+
+.team__item img {
+  display: block;
+  width: 100%;
+}
+
+.team__item .item__title {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  padding: 30px;
+  background-color: #ff0e83;
+  width: 100%;
+  color: white;
+  opacity: 1;
+  transition: all 0.5s;
+}
+
+.team__item:hover .item__title {
+  opacity: 0;
+}
+
+.team__item h3 {
+  font-size: 1.3rem;
+}
+
+.team__item p {
+  font-size: 0.875rem;
+  line-height: 28px;
+}
+
+.team__item .item__detail {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.6);
+  padding: 100px 40px;
+  color: white;
+  opacity: 0;
+  transition: all 0.5s;
+}
+
+.team__item:hover .item__detail {
+  opacity: 1;
+}
+
+.team__item .item__detail h3 {
+  color: #ff0e83;
+}
+
+.team__item .item__detail p:first-of-type {
+  margin: 8px 0;
+}
+
+.team__item .item__detail .item__socials {
+  margin-top: 24px;
+}
+
+.team__item .item__detail .social__icon {
+  display: inline-block;
+  width: 37px;
+  height: 37px;
+  line-height: 37px;
+  text-align: center;
+  border: 1.5px solid rgba(255, 255, 255, 0.5);
+  margin: 0 5px;
+  transition: all 0.5s;
+}
+
+.team__item .item__detail .social__icon:hover {
   border-color: #ff0e83;
+  color: #ff0e83;
+}
+
+.team__item2 {
+  /* Thuộc tính overflow hidden khi bị lố ra ngoài thẻ sẽ ẩn các nội dung ẩn đi */
+  overflow: hidden;
+}
+
+.team__item2 .item__detail {
+  opacity: 1;
+  transform: translateX(-100%);
+}
+
+.team__item2:hover .item__detail {
+  transform: translateX(0);
+}
+
+.team__item3 {
+  overflow: hidden;
+}
+
+.team__item3 .item__detail {
+  opacity: 1;
+  transform: translatey(-100%);
+}
+
+.team__item3:hover .item__detail {
+  transform: translateX(0);
+}
+
+.team__item4 {
+  overflow: hidden;
+}
+
+.team__item4 .item__detail {
+  /* opacity: 1; */
+  transform: rotate(0);
+}
+
+.team__item4:hover .item__detail {
+  transform: rotate(360deg);
+}
+
+.team__item5 .item__detail {
+  opacity: 1;
+  transform: scale(0);
+}
+
+.team__item5:hover .item__detail {
+  transform: scale(1);
+}
+
+/* .team__item6 .item__detail {
+  opacity: 1;
+  transform: skewX(30deg);
+} */
+
+/* FEEDBACK CSS */
+.feedback {
+  padding: 70px 0;
+  background-image: url(./../img/cc1.jpg);
+  background-size: cover;
+}
+
+.feedback h2 {
+  color: white;
+}
+
+.feedback__content {
+  border: 3px solid #ff0e83;
+  background-color: rgba(255, 255, 255, 0.5);
+  text-align: center;
+  padding: 32px;
+}
+
+.feedback__content svg {
+  font-size: 1.3rem;
+  color: #2cbeff;
+  padding: 0 18px;
+}
+
+.feedback__content .item p {
+  line-height: 30px;
+  letter-spacing: 1.3px;
+}
+
+.feedback__content .item p:last-child {
+  color: white;
+}
+
+.feedback__content .owl-theme .owl-dots .owl-dot span {
+  background-color: #4a5d65;
+}
+
+.feedback__content .owl-theme .owl-dots .owl-dot.active span {
+  background-color: black;
+}
+
+/* CONTACT CSS */
+.contact {
+  padding: 70px 0;
+}
+
+.contact__form form {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 15px 30px;
+}
+
+.contact__form textarea,
+.contact__form button {
+  grid-column: 1 / span 2;
+  padding: 15px;
+  font-size: 1rem;
+  font-weight: 700;
   color: black;
+}
+
+.contact__form input {
+  padding: 15px;
+  font-size: 1rem;
+  font-weight: 600;
+  border: 1px solid black;
+  border-radius: 5px;
+  transition: all 0.5s;
+}
+
+.contact__form input:focus {
+  outline: none;
+  box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+}
+
+.contact__form textarea {
+  border: 1px solid black;
+  /* resize chỉnh sửa textarea kéo to ra */
+  /* giá trị none chặn người dùng kéo to ra */
+  resize: none;
+}
+
+.contact__form textarea::placeholder {
+  color: black;
+}
+
+.contact__form button {
+  border-radius: 0;
+}
+
+.contact__form .button:hover {
+  color: white;
+  background-color: black;
+}
+
+.contact__map iframe {
+  width: 100%;
+  margin-top: 50px;
+}
+
+.contact__info {
+  margin-top: 50px;
+  display: flex;
+  justify-content: space-around;
+  text-align: center;
+}
+
+.contact__info .contact__item svg {
+  font-size: 2rem;
+  color: #4e2a84;
+}
+
+.contact__info .contact__item p {
+  font-size: 0.8rem;
+  margin: 10px 0;
+}
+
+/* FOOTER CSS */
+footer {
+  padding: 50px 0;
+  background-color: black;
+  color: white;
+}
+
+.footer__top {
+  display: flex;
+  padding-bottom: 50px;
+}
+
+.footer__item {
+  width: 25%;
+  padding: 0 20px;
+}
+
+.footer__item h3 {
+  font-size: 1.3rem;
+  color: #ff0e83;
+  margin-bottom: 1rem;
+}
+
+.footer__item p {
+  font-size: 0.8rem;
+  line-height: 28px;
+  padding-bottom: 1rem;
+}
+
+.footer__socials .social__bg {
+  display: inline-block;
+  width: 35px;
+  height: 35px;
+  line-height: 35px;
+  text-align: center;
+  margin-right: 10px;
+  border: 1px solid white;
+  transition: all 0.5s;
+}
+
+.footer__socials .social__bg:hover {
+  color: #ff0e83;
+  border-color: #ff0e83;
+}
+
+.footer__item .footer__time {
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px dotted white;
+  margin: 10px 0;
+}
+
+.footer__item form input {
+  margin-bottom: 16px;
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid black;
+}
+
+.footer__item form .button {
+  padding: 7px 16px;
+  color: black;
+  border-color: #ff0e83;
+  font-weight: 700;
+  margin-bottom: 24px;
+}
+
+.footer__item form .button:hover {
+  border-color: transparent;
+}
+
+.footer__bottom {
+  text-align: center;
+  font-size: 0.8rem;
+}
+
+.footer__bottom span {
+  color: #ff0e83;
+}
+
+/* BACK TO TOP CSS */
+.backToTop {
+  position: fixed;
+  right: 50px;
+  bottom: 50px;
+  display: block;
+  color: #0bbbcc;
+  border: 2px solid #0bbbcc;
+  width: 40px;
+  height: 40px;
+  line-height: 36px;
+  border-radius: 50%;
+  text-align: center;
+  font-size: 2rem;
+  font-weight: 900;
+
+  /* Thuộc tính visibility này chỉ định xem các hộp được tạo bởi một phần tử có được hiển thị hay không. */
+  /* Giá trị hidden là ẩn */
+  visibility: hidden;
+  opacity: 0;
+}
+
+.backToTop svg {
+  position: relative;
+  right: 1px;
+}
+
+.cd-top--is-visible {
+  /* back-to-top button visible */
+  visibility: visible;
+  opacity: 1;
+}
+
+.cd-top--fade-out {
+  /* reduce button opacity if user keeps scrolling */
+  opacity: 0.5;
+}
+
+/* ANIMATION */
+/* Khai báo chuỗi chuyển động */
+@keyframes upDown {
+  /* giả sử có 100s */
+  0% {
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+@keyframes upDown2 {
+  from {
+    transform: translateY(0);
+  }
+
+  to {
+    transform: translateY(50px);
+  }
+}
+
+@keyframes upDown2 {
+  from {
+    transform: translateY(0);
+  }
+
+  to {
+    transform: translateY(50px);
+  }
+}
+
+@keyframes upDown3 {
+  0% {
+    transform: translateY(0) scale(1);
+    background-color: red;
+  }
+
+  100% {
+    transform: translateY(50px) scale(1.2);
+    background-color: yellow;
+  }
 }

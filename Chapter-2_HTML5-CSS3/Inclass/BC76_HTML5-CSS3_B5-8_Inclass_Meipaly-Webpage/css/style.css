@@ -1,0 +1,67 @@
+/* GLOBAL CSS */
+/* reset css */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body,
+html {
+  font-family: "Oswald", sans-serif;
+  font-size: 16px;
+}
+
+/* ultility class */
+.container {
+  max-width: 1140px;
+  margin: 0 auto;
+}
+
+ul {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+}
+
+/* HEADER CSS */
+header {
+  padding: 26px 0;
+  background-color: black;
+}
+
+header .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+header .header__logo a {
+  font-size: 2rem;
+  font-weight: 700;
+  color: white;
+}
+
+header nav li {
+  display: inline;
+  padding: 0px 26px;
+}
+
+header nav a {
+  font-size: 1.0625rem;
+  text-transform: uppercase;
+  color: white;
+  transition: all 0.5s;
+}
+
+/* Tạo sự kiện hover dành cho các nút điều hướng */
+header nav a:hover {
+  color: #e62b4a;
+}
+
+header nav .active {
+  color: #e62b4a;
+}
