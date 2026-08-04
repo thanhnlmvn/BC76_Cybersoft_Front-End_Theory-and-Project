@@ -30,7 +30,12 @@ a {
 /* HEADER CSS */
 header {
   padding: 26px 0;
-  background-color: black;
+  /* background-color: black; */
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
 }
 
 header .container {
@@ -64,4 +69,449 @@ header nav a:hover {
 
 header nav .active {
   color: #e62b4a;
+}
+
+/* BANNER CSS */
+.banner {
+  height: 700px;
+  background-image: url(./../img/home_slider.jpg);
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  color: white;
+}
+
+.banner .banner__sub-title {
+  font-size: 1.5625rem;
+}
+
+.banner .banner__content h1 {
+  font-size: 4.6875rem;
+  line-height: 5.625rem;
+}
+
+.banner .banner__content button {
+  margin-top: 20px;
+  padding: 15px 25px;
+  background-color: #e62b4a;
+  border: 1px solid #e62b4a;
+  color: white;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.5s;
+}
+
+.banner .banner__content button:hover {
+  background-color: #af2239;
+}
+
+.banner .banner__content svg {
+  margin-top: 50px;
+  font-size: 30px;
+  /* animation-name: arrowGoDown; */
+  /* animation-duration: 1s; */
+  /* animation-iteration-count: infinite; */
+  animation: arrowGoDown 1s linear infinite;
+}
+
+/* SERVICES CSS */
+.services {
+  padding: 90px 0;
+  background-color: black;
+  text-align: center;
+  letter-spacing: 1px;
+  color: white;
+}
+
+.services .services__title .services__sub-title {
+  font-size: 0.875rem;
+  color: #e62b4a;
+  font-weight: 300;
+}
+
+.services .services__title h2 {
+  font-size: 3.125rem;
+  font-weight: 400;
+}
+
+.services .services__title p:last-child {
+  font-size: 1rem;
+  color: #888888;
+  font-weight: 700;
+  margin-top: 20px;
+}
+
+.services .services__item {
+  padding: 10px;
+}
+
+.services .services__item svg {
+  font-size: 3.125rem;
+}
+
+.services .services__item p {
+  font-size: 0.875rem;
+}
+
+.services .services__item-bg {
+  background-color: white;
+  color: #888888;
+  height: 230px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+.services .services__item-bg::after {
+  content: "";
+  height: 0;
+  width: 5px;
+  background-color: #e62b4a;
+  position: absolute;
+  top: 0;
+  right: 0;
+  transition: all 0.5s;
+  display: block;
+}
+
+.services .services__item-bg:hover::after {
+  height: 100%;
+}
+
+.services .slick-dots li.slick-active button:before {
+  color: #e62b4a;
+}
+
+.services .slick-dots li button:before {
+  font-size: 14px;
+}
+
+.services .slick-dots li button:before {
+  color: white;
+}
+
+/* BLOG CSS */
+.blog {
+  padding: 100px 0;
+}
+
+.blog .blog__title {
+  text-align: center;
+}
+
+.blog .blog__title .blog__sub-title {
+  color: #888888;
+  font-weight: 400;
+  font-size: 0.875;
+}
+
+.blog .blog__title h2 {
+  font-size: 50px;
+  font-weight: 400;
+}
+
+.blog .blog__title p:last-child {
+  font-size: 1rem;
+  color: #888888;
+  font-weight: 700;
+  margin-top: 20px;
+}
+
+.blog .blog__content {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 30px;
+  margin-top: 50px;
+}
+
+.blog .blog__content .blog__item img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: grayscale(50%) contrast(50%);
+}
+
+.blog .blog__content .blog__item {
+  position: relative;
+  overflow: hidden;
+}
+
+.blog .blog__content .blog__item:first-child {
+  grid-column: 1 / span 2;
+  grid-row: 1 / span 2;
+}
+
+.blog .blog__content .blog__item:last-child {
+  grid-column: 3 / span 2;
+  grid-row: 3 / span 2;
+}
+
+.blog .blog__item .blog__item-bg {
+  position: absolute;
+  background-color: rgba(230, 43, 74, 0.6);
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 25px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  opacity: 0;
+  transition: all 0.5s;
+}
+
+.blog .blog__content .blog__item:hover .blog__item-bg {
+  opacity: 1;
+}
+
+.blog .blog__item-bg .blog__item-icon {
+  width: 35px;
+  height: 35px;
+  line-height: 35px;
+  text-align: center;
+  background: white;
+  margin-left: auto;
+  cursor: pointer;
+  /* translateX giúp phần tử di chuyển phần tử theo chiều ngang */
+  /* translateY giúp phần tử di chuyển phần tử theo chiều dọc */
+  /* scale giúp phóng to phần tử */
+  /* rotate nhận deg (độ) giúp đảo chiều, xoay thay đổi một phần tử html đang có */
+  transform: translateY(20px);
+  transition: all 0.5s;
+}
+
+.blog .blog__item-bg .blog__item-icon:hover {
+  background: #000;
+}
+
+.blog .blog__item-bg .blog__item-icon a {
+  transition: all 0.5s;
+}
+
+.blog .blog__item-bg .blog__item-icon:hover a {
+  color: white;
+}
+
+.blog .blog__item-bg .blog__item-text {
+  transform: translateY(20px);
+  transition: all 0.5s;
+}
+
+.blog .blog__item-bg .blog__item-text p {
+  color: #d0c7c8;
+}
+
+.blog .blog__item-bg .blog__item-text h3 {
+  color: white;
+}
+
+.blog .blog__content .blog__item:hover .blog__item-icon,
+.blog .blog__content .blog__item:hover .blog__item-text {
+  transform: translateY(0);
+}
+
+/* NUMBER CSS */
+.number {
+  padding: 100px 0;
+  background: #000;
+  color: white;
+  text-align: center;
+}
+
+.number .number__content {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+}
+
+.number .number__item h3 {
+  font-size: 3.75rem;
+  font-weight: 300;
+}
+
+.number .number__item p {
+  font-size: 1.25rem;
+  color: #888888;
+}
+
+/* DIGITAL CSS */
+.digital {
+  padding: 100px 0;
+  background-image: url(./../img/bussiness_img_1.jpg);
+  background-size: cover;
+  background-attachment: fixed;
+  text-align: center;
+}
+
+.digital .digital__title p:first-child {
+  color: #e62b4a;
+  font-weight: 300;
+  font-size: 0.875rem;
+}
+
+.digital .digital__title h2 {
+  font-size: 3.125rem;
+  font-weight: 400;
+  color: white;
+}
+
+.digital .digital__title p:last-child {
+  font-size: 1rem;
+  color: #888888;
+  font-weight: 700;
+  margin-top: 20px;
+}
+
+.digital .digital__content video {
+  width: 100%;
+  margin-top: 30px;
+}
+
+/* CONTACT CSS */
+.contact {
+  padding: 100px 0;
+  text-align: center;
+}
+
+.contact .contact__title h2 {
+  font-size: 3.125rem;
+  font-weight: 400;
+}
+
+.contact .contact__title p {
+  font-weight: 400;
+  color: #888888;
+  margin-top: 20px;
+}
+
+.contact .contact__content {
+  margin-top: 30px;
+  display: flex;
+}
+
+.contact .contact__content .contact__left {
+  width: 60%;
+}
+
+.contact .contact__content .contact__left iframe {
+  width: 100%;
+}
+
+.contact .contact__content .contact__right {
+  padding: 0 15px;
+  width: 40%;
+}
+
+.contact .contact__content .contact__right input,
+.contact .contact__content .contact__right textarea {
+  width: 100%;
+  font-size: 15px;
+  padding: 1em;
+  border: 1px solid #888888;
+  border-radius: 2px;
+  margin-bottom: 30px;
+  resize: none;
+}
+
+.contact .contact__content .contact__right button {
+  width: 100%;
+  padding: 20px 30px;
+  background-color: black;
+  color: white;
+  border: 1px solid black;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: all 0.5s;
+}
+
+.contact .contact__content .contact__right button:hover {
+  background-color: #e62b4a;
+  border-color: #e62b4a;
+}
+
+/* FOOTER CSS */
+footer {
+  padding: 100px 0;
+  background-color: #000;
+  color: white;
+}
+
+footer .footer__content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+footer .footer__content p:first-child {
+  font-size: 0.875rem;
+}
+
+footer .footer__content .footer__social ul {
+  display: flex;
+}
+
+footer .footer__content .footer__social li {
+  display: flex;
+  text-align: center;
+}
+
+footer .footer__content .footer__social a {
+  color: white;
+  display: inline-block;
+  width: 54px;
+  height: 54px;
+  background-color: rgba(255, 255, 255, 0.2);
+  line-height: 54px;
+  border-radius: 50%;
+  margin-left: 10px;
+  transition: all 0.5s;
+}
+
+footer .footer__content .footer__social a:hover {
+  background-color: #af2239;
+}
+
+/* BACK TO TOP CSS */
+.backToTop {
+  width: 60px;
+  height: 60px;
+  line-height: 60px;
+  text-align: center;
+  display: inline-block;
+  background: rgba(0, 0, 0, 0.25);
+  border-radius: 4px;
+  color: white;
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  font-size: 1.25rem;
+  visibility: hidden;
+  opacity: 0;
+}
+
+.cd-top--is-visible {
+  visibility: visible;
+  opacity: 1;
+}
+
+.cd-top--fade-out {
+  opacity: 0.5;
+}
+
+/* ANIMATION CSS */
+@keyframes arrowGoDown {
+  from {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  to {
+    opacity: 0;
+    transform: translateY(40px);
+  }
 }
