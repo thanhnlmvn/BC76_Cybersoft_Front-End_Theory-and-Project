@@ -1,0 +1,413 @@
+/* GLOBAL */
+/* Reset CSS */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  font-size: 16px;
+}
+
+/* HEADER CSS */
+header {
+  position: absolute;
+  z-index: 9999;
+  top: 0;
+  left: 0;
+  right: 0;
+}
+
+header .navbar-brand svg {
+  font-size: 2.8125rem;
+  color: #35a22c;
+}
+
+header .navbar-brand span {
+  color: white;
+  font-size: 2.25rem;
+}
+
+header .navbar-toggler {
+  background-color: #35a22c;
+}
+
+header .navbar-toggler-icon {
+  background-image: none;
+  color: rgba(255, 255, 255, 0.5);
+  line-height: 1.5em;
+}
+
+header .navbar-nav .nav-item {
+  margin: 0 10px;
+}
+
+header .navbar-collapse .navbar-nav .nav-item::after {
+  content: "";
+  display: block;
+  width: 0;
+  height: 2px;
+  background-color: #35a22c;
+  transition: all 0.5s;
+}
+
+header .navbar-collapse .navbar-nav .nav-item:hover::after {
+  width: 100%;
+}
+
+header .navbar-collapse .navbar-nav .nav-item.active .nav-link {
+  color: #35a22c;
+}
+
+header .navbar-collapse .navbar-nav .nav-item.active::after {
+  width: 100%;
+}
+
+header .navbar-collapse .navbar-nav .nav-item .nav-link {
+  color: white;
+  transition: all 0.5s;
+}
+
+header .navbar-collapse .navbar-nav .nav-item:hover .nav-link {
+  color: #35a22c;
+}
+
+/* CAROUSEL CSS */
+.cyber-carousel .carousel-item > img {
+  height: 100%;
+  object-fit: cover;
+}
+
+.carousel__text {
+  position: absolute;
+  /* top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%; */
+
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+
+  background: rgba(39, 43, 54, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.cyber-carousel .carousel__text {
+  text-align: center;
+  color: white;
+}
+
+.cyber-carousel .carousel__text img {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+}
+
+.cyber-carousel .carousel__text h2 {
+  font-size: 56px;
+  line-height: 65px;
+}
+
+.cyber-carousel .carousel__text p {
+  font-size: 24px;
+}
+
+.cyber-carousel .carousel-indicators {
+  bottom: 10%;
+}
+
+.cyber-carousel .carousel-indicators [data-bs-target] {
+  border-radius: 50%;
+  width: 13px;
+  height: 13px;
+  transition: all 0.5s;
+}
+
+.cyber-carousel .carousel-indicators .active {
+  background-color: #35a22c;
+}
+
+.cyber-carousel .carousel-indicators [data-bs-target]:hover {
+  background-color: #35a22c;
+}
+
+/* PROJECT CSS */
+.project .project__tilte {
+  max-width: 750px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.project .project__tilte h2 {
+  font-size: 36px;
+  line-height: 42px;
+  color: #1a1d2d;
+  font-weight: 600;
+}
+
+.project .project__tilte p {
+  color: #585858;
+  line-height: 24px;
+}
+
+.project .project__content .nav-item .active {
+  background-color: #35a22c;
+  border-color: #35a22c !important;
+  color: white !important;
+}
+
+.project .project__content .project__item {
+  cursor: pointer;
+}
+
+.project .project__content .project__item .project__text h3 {
+  transition: all 0.5s;
+}
+
+.project .project__content .project__item:hover .project__text h3 {
+  color: #35a22c;
+}
+
+.project .project__content .project__item .project__text {
+  border: 1px solid transparent;
+  border-top: none;
+  transition: all 0.5s;
+}
+
+.project .project__content .project__item:hover .project__text {
+  border-color: #35a22c;
+}
+
+.project .project__content .project__item .project__text p {
+  color: #585858;
+}
+
+/* AVAILABLE CSS */
+.available {
+  background: url(./../img/3.jpg) no-repeat center;
+  background-size: cover;
+  padding: 100px 0 120px;
+  background-attachment: fixed;
+  position: relative;
+}
+
+.available::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background-color: rgba(7, 10, 12, 0.72);
+}
+
+.available .available__title {
+  max-width: 750px;
+}
+
+.available .available__title h2 {
+  font-size: 36px;
+  line-height: 42px;
+  font-weight: 600;
+}
+
+.available .available__content .available__item {
+  padding: 40px 40px;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(3px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 10px;
+  transition: all 0.5s;
+}
+
+.available .available__content .available__item svg {
+  font-size: 48px;
+  color: #35a22c;
+}
+
+.available .available__content .available__item h4 {
+  font-size: 20px;
+  color: #fff;
+  line-height: 30px;
+  padding-top: 25px;
+  font-weight: 800;
+}
+
+.available .available__content .available__item p {
+  padding-top: 15px;
+  font-size: 16px;
+  line-height: 24px;
+  color: #fff;
+}
+
+.available .available__content .available__item:hover {
+  background-color: black;
+  border-color: #fff;
+}
+
+/* AWARD CSS */
+.award {
+  color: #585858;
+  padding: 70px 0;
+  position: relative;
+}
+
+.award::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url(./../img/memphis_3.png);
+  background-position: bottom left;
+  background-repeat: no-repeat;
+  background-size: 50% auto;
+  opacity: 0.5;
+}
+
+.award .award__left {
+  position: relative;
+  z-index: 1;
+  padding: 45px;
+  background: rgba(255, 255, 255, 0.25);
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  backdrop-filter: blur(3px);
+  box-shadow: 0 0 30px 0 rgba(0, 0, 0, 0.3);
+}
+
+.award .award__left h2 {
+  font-size: 36px;
+  line-height: 42px;
+  color: #1a1d2d;
+  font-weight: 600;
+}
+
+.award .award__left p {
+  color: #585858;
+  line-height: 24px;
+}
+
+.award .award__right {
+  padding: 40px 0;
+  position: relative;
+  z-index: 1;
+}
+
+.award .award__right .award__icon img {
+  max-width: 100%;
+}
+
+/* FOOTER CSS */
+footer {
+  background: #222;
+}
+
+footer .footer__top a {
+  display: inline-block;
+  margin-right: 10px;
+  width: 42px;
+  height: 42px;
+  line-height: 42px;
+  border-radius: 50%;
+  border: 1px solid #454545;
+  color: #aaa;
+  transition: all 0.5s;
+}
+
+footer .footer__top a:hover {
+  color: #35a22c;
+  border-color: #35a22c;
+}
+
+footer .footer__bottom {
+  border-top: 1px solid #454545;
+  padding-top: 30px;
+  margin-top: 30px;
+  color: #aaa;
+}
+
+footer .footer__bottom a {
+  color: #aaa;
+  text-decoration: none;
+  transition: all 0.5s;
+}
+
+footer .footer__bottom a:hover {
+  color: #35a22c;
+}
+
+/* REPONSIVE CSS */
+
+/* Tablet */
+@media screen and (max-width: 820px) {
+  header .navbar-collapse {
+    background-color: white;
+  }
+
+  header .navbar-nav .nav-item {
+    margin: 0;
+    padding: 0 10px;
+  }
+
+  header .navbar-nav .nav-item:hover {
+    background-color: #35a22c;
+  }
+
+  header .navbar-collapse .navbar-nav .nav-item:hover .nav-link {
+    color: white;
+  }
+
+  header .navbar-collapse .navbar-nav .nav-item .nav-link {
+    color: #35a22c;
+  }
+
+  header .navbar-collapse .navbar-nav .nav-item.active::after {
+    width: 0;
+  }
+
+  header .navbar-collapse .navbar-nav .nav-item:hover::after {
+    width: 0;
+  }
+}
+
+@media screen and (max-width: 575.98px) {
+  .award::after {
+    background-size: cover;
+  }
+}
+
+/* Mobile */
+@media screen and (max-width: 391px) {
+  header .navbar-brand svg,
+  header .navbar-brand span {
+    font-size: 7vw;
+  }
+}
+
+/* Mobile first (min-width) | Desktop first (max-width) */
+/* Nếu ở màn hình điện thoại, thì logo chữ sẽ hiển thị màu cam, còn nếu ở tablet hoặc desktop thì vẫn giữ màu trắng */
+/* Ở title của phần carousel, nếu ở mobile (576px) thì điều chỉnh màu đỏ, còn nếu ở vùng từ 576px đến 992px thì chỉnh màu cam, còn lại desktop thì vẫn màu trắng */
+/* @media screen and (min-width: 577px) and (max-width: 992px) {
+  .cyber-carousel .carousel__text h2 {
+    color: orange;
+  }
+}
+
+@media screen and (max-width: 576px) {
+  header .navbar-brand span {
+    color: orange;
+  }
+
+  .cyber-carousel .carousel__text h2 {
+    color: red;
+  }
+} */
